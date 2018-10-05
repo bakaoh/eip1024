@@ -80,6 +80,6 @@ func Decrypt(recievierPrivatekey string, encryptedData *EncryptedData) ([]byte, 
 		decryptedMessage, _ := box.Open(nil, ciphertext, &nonce24, &publicKey, &privateKey)
 		return decryptedMessage, nil
 	default:
-		return nil, errors.New("Encryption type/version not supported")
+		return nil, errors.New("Decryption type/version not supported")
 	}
 }
